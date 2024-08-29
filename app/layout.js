@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "NextLevel Food",
+  title: "Foodies App",
   description: "Delicious meals, shared by a food-loving community.",
 };
 
