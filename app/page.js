@@ -1,51 +1,66 @@
-import Navbar from "@/components/navbar";
+import Carousel from "@/components/carousel";
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <>
-      <header>
-        <div className="md:grid md:grid-cols-2 space-y-20 py-20 max-h-[720px]">
-          <div className="md:col-start-2 px-20">
-            <h1 className="text-6xl font-bold py-10 text-rose-50">
-              NextLevel Food for NextLevel Foodies
-            </h1>
-            <p className="font-medium text-neutral-400">
-              Taste & share food from all over the world.
-            </p>
+      <header className="pb-20">
+        <div className="md:grid md:grid-cols-2">
+          <div className="md:col-start-1 md:p-20 py-10 min-h-[400px]">
+            <Carousel />
           </div>
-          <div className="md:col-start-2 px-20 flex items-center">
-            <Link href="/community">Join the Community</Link>
-            <Link href="/meals" className="bg-slate-800 p-3 rounded-lg mx-12">
-              Explore Meals
-            </Link>
+
+          <div className="md:col-start-2 p-0 text-center md:text-left">
+            <div className="space-y-10 md:p-20 py-20">
+              <h1 className="md:text-6xl text-5xl font-bold text-rose-50">
+                Next Level Food for Next Level Foodies
+              </h1>
+              <p className="font-medium text-neutral-400 underline underline-offset-4">
+                Taste & share food from all over the world.
+              </p>
+            </div>
+            <div className="px-20 w-full flex items-center justify-between flex-col md:flex-row">
+              <Link
+                href="/community"
+                className="text-rose-50 hover:text-white pb-5 md:p-0"
+              >
+                Join the Community
+              </Link>
+              <Link
+                href="/meals"
+                className={`${buttonVariants({ variant: "secondary" })}`}
+              >
+                Explore Meals
+              </Link>
+            </div>
           </div>
         </div>
       </header>
 
-      <main className="flex flex-col justify-center p-20">
+      <main className="flex flex-col justify-center md:p-20 py-20 space-y-20 text-center md:text-left">
         <section className="flex flex-col space-y-10">
           <h2 className="text-4xl font-semibold">How it works</h2>
-          <p>
-            NextLevel Food is a platform for foodies to share their favorite
+          <p className="text-neutral-300">
+            Next Level Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,
             and to connect with other food lovers.
           </p>
-          <p>
+          <p className="text-neutral-300">
             NextLevel Food is a place to discover new dishes, and to connect
             with other food lovers.
           </p>
         </section>
 
-        <section>
-          <h2>Why NextLevel Food?</h2>
-          <p>
-            NextLevel Food is a platform for foodies to share their favorite
+        <section className="flex flex-col space-y-10">
+          <h2 className="text-4xl font-semibold">Why Next Level Food?</h2>
+          <p className="text-neutral-300">
+            Next Level Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,
             and to connect with other food lovers.
           </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
+          <p className="text-neutral-300">
+            Next Level Food is a place to discover new dishes, and to connect
             with other food lovers.
           </p>
         </section>
