@@ -1,20 +1,32 @@
-import Cards from "@/components/cards";
-import { IoMdSearch } from "react-icons/io";
-import { Input } from "@/components/ui/input";
+import MealItem from "@/components/meals/meal-item";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { getMeals } from "@/lib/meals";
+import MealsGrid from "@/components/meals/meals-grid";
 
-export default function MealsPage() {
+export default async function MealsPage() {
+  const meals = await getMeals();
+
   return (
-    <main className="flex flex-col items-center p-4">
-      <div className="w-full flex flex-col items-center pb-4">
-        <h1 className="text-2xl font-bold p-4">Browse Meals</h1>
-        <form className="flex items-center">
-          <Input type="text" placeholder="Search..." />
-          <button className="bg-transparent hover:text-white h-10 py-2 px-4 hover:bg-neutral-950">
-            <IoMdSearch />
-          </button>
-        </form>
+    <main>
+      <div className="md:p-20 pt-20 space-y-10">
+        <h1 className="text-6xl font-bold text-rose-50">
+          Delicious meals, created <span className="text-rose-500">by you</span>
+        </h1>
+        <p className="text-2xl font-semibold text-neutral-400">
+          Chose your favorite recipe and cook it yourself. It is easy and fun!
+        </p>
+
+        <div>
+          <Link
+            href="/meals/share"
+            className={`${buttonVariants({ variant: "secondary" })}`}
+          >
+            Share Your Favorite Recipe
+          </Link>
+        </div>
       </div>
-      <Cards />
+      <MealsGrid meals={meals} />
     </main>
   );
 }
