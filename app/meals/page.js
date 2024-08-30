@@ -9,7 +9,7 @@ export default function MealsPage() {
         <h1 className="text-2xl font-bold p-4">Browse Meals</h1>
         <form className="flex items-center">
           <Input type="text" placeholder="Search..." />
-          <button class="bg-transparent hover:text-white h-10 py-2 px-4 hover:bg-neutral-950">
+          <button className="bg-transparent hover:text-white h-10 py-2 px-4 hover:bg-neutral-950">
             <IoMdSearch />
           </button>
         </form>
