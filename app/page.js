@@ -16,7 +16,7 @@ export default function Home() {
               <h1 className="md:text-6xl text-5xl font-bold text-rose-50">
                 Next Level Food for Next Level Foodies
               </h1>
-              <p className="font-medium text-neutral-400 underline underline-offset-4">
+              <p className="font-medium text-neutral-400">
                 Taste & share food from all over the world.
               </p>
             </div>
