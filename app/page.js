@@ -14,7 +14,8 @@ export default function Home() {
           <div className="md:col-start-2 p-0 text-center md:text-left">
             <div className="space-y-10 md:p-20 py-20">
               <h1 className="md:text-6xl text-5xl font-bold text-rose-50">
-                Next Level Food for Next Level Foodies
+                Next Level <span className="text-rose-500">Food</span> for Next
+                Level <span className="text-rose-500">Foodies</span>
               </h1>
               <p className="font-medium text-neutral-400">
                 Taste & share food from all over the world.
