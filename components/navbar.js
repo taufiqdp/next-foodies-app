@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import logoImg from "@/assets/logo.png";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,9 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const path = usePathname();
+  console.log(path);
 
   return (
     <nav className="bg-black shadow border-b-2 border-neutral-700 w-full fixed top-0 left-0 z-50">
@@ -45,22 +49,38 @@ export default function Navbar() {
               transition-all duration-300 ease-in-out overflow-hidden md:border-none border-l-4 
               border-neutral-400`}
           >
-            <li className="md:px-3 px-2 md:py-2 text-rose-50">
+            <li
+              className={`md:px-3 px-2 md:py-2 hover:text-rose-50 ${
+                path === "/" && "text-rose-50"
+              }`}
+            >
               <Link href="/" onClick={toggleMenu}>
                 Home
               </Link>
             </li>
-            <li className="md:px-3 px-2 md:py-2 hover:text-rose-50">
+            <li
+              className={`md:px-3 px-2 md:py-2 hover:text-rose-50 ${
+                path.startsWith("/meals") && "text-rose-50"
+              }`}
+            >
               <Link href="/meals" onClick={toggleMenu}>
                 Browse Meals
               </Link>
             </li>
-            <li className="md:px-3 px-2 md:py-2 hover:text-rose-50">
+            <li
+              className={`md:px-3 px-2 md:py-2 hover:text-rose-50 ${
+                path.startsWith("/community") && "text-rose-50"
+              }`}
+            >
               <Link href="/community" onClick={toggleMenu}>
                 Community
               </Link>
             </li>
-            <li className="md:px-3 px-2 md:py-2 hover:text-rose-50">
+            <li
+              className={`md:px-3 px-2 md:py-2 hover:text-rose-50 ${
+                path.startsWith("/contact") && "text-rose-50"
+              }`}
+            >
               <Link href="/contact" onClick={toggleMenu}>
                 Contact
               </Link>
