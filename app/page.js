@@ -21,7 +21,7 @@ export default function Home() {
                 Taste & share food from all over the world.
               </p>
             </div>
-            <div className="px-20 w-full flex items-center justify-between flex-col md:flex-row">
+            <div className="px-20 w-full flex items-center flex-col md:flex-row">
               <Link
                 href="/community"
                 className="text-rose-50 hover:text-white pb-5 md:p-0"
@@ -30,7 +30,9 @@ export default function Home() {
               </Link>
               <Link
                 href="/meals"
-                className={`${buttonVariants({ variant: "secondary" })}`}
+                className={`${buttonVariants({
+                  variant: "secondary",
+                })} md:mx-6`}
               >
                 Explore Meals
               </Link>
