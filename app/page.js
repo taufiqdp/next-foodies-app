@@ -40,7 +40,7 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col justify-center md:p-20 py-20 space-y-20 text-center md:text-left">
-        <section className="flex flex-col space-y-10">
+        <section className="flex flex-col space-y-4">
           <h2 className="text-4xl font-semibold">How it works</h2>
           <p className="text-neutral-300">
             Next Level Food is a platform for foodies to share their favorite
@@ -53,7 +53,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="flex flex-col space-y-10">
+        <section className="flex flex-col space-y-4">
           <h2 className="text-4xl font-semibold">Why Next Level Food?</h2>
           <p className="text-neutral-300">
             Next Level Food is a platform for foodies to share their favorite
