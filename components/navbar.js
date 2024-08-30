@@ -28,7 +28,7 @@ export default function Navbar() {
               height={40}
               width={40}
               alt="logo"
-              className={`rounded-full ml-4`}
+              className={`rounded-full md:ml-4`}
             />
             <h1 className="text-rose-50 text-2xl font-bold pl-3">Foodies</h1>
           </Link>
