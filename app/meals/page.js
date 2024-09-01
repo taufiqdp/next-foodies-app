@@ -1,4 +1,3 @@
-import MealItem from "@/components/meals/meal-item";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { getMeals } from "@/lib/meals";
