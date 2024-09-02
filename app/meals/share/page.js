@@ -1,5 +1,6 @@
 import ImagePicker from "@/components/meals/image-picker";
 import { Button } from "@/components/ui/button";
+import { shareMeal } from "@/lib/actions";
 
 export default function ShareMealPage() {
   return (
@@ -9,14 +10,15 @@ export default function ShareMealPage() {
           Share your <span className="text-rose-500">favorite recipe</span>
         </h1>
 
-        <form>
+        <form action={shareMeal}>
           <div className="mt-4 flex flex-col space-y-5">
             <div className="md:grid md:grid-cols-2 gap-10 space-y-5 md:space-y-0">
               <div className="col-start-1">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="creator">Name</label>
                 <input
-                  id="name"
+                  id="creator"
                   type="text"
+                  name="creator"
                   className="block w-full px-4 py-2 mt-2 text-rose-50 bg-black rounded-md focus:outline-none"
                 />
               </div>
@@ -24,13 +26,14 @@ export default function ShareMealPage() {
               <div className="col-start-2">
                 <label
                   className="text-rose-50 dark:text-gray-200"
-                  htmlFor="emailAddress"
+                  htmlFor="creator-email"
                 >
                   Email Address
                 </label>
                 <input
-                  id="emailAddress"
+                  id="creator-email"
                   type="email"
+                  name="creator-email"
                   className="block w-full px-4 py-2 mt-2 text-rose-50 bg-black rounded-md focus:outline-none"
                 />
               </div>
@@ -46,6 +49,7 @@ export default function ShareMealPage() {
               <input
                 id="title"
                 type="text"
+                name="title"
                 className="block w-full px-4 py-2 mt-2 text-rose-50 bg-black rounded-md focus:outline-none"
               />
             </div>
@@ -60,6 +64,7 @@ export default function ShareMealPage() {
               <input
                 id="summary"
                 type="text"
+                name="summary"
                 className="block w-full px-4 py-2 mt-2 text-rose-50 bg-black rounded-md focus:outline-none"
               />
             </div>
@@ -74,6 +79,7 @@ export default function ShareMealPage() {
 
               <textarea
                 rows={10}
+                name="instructions"
                 className="block w-full px-4 py-2 mt-2 text-rose-50 bg-black rounded-md focus:outline-none"
               />
             </div>
@@ -81,7 +87,7 @@ export default function ShareMealPage() {
 
           <div className="md:grid md:grid-cols-2 pt-10">
             <div className="md:col-start-1 flex justify-center">
-              <ImagePicker />
+              <ImagePicker label="image" name="image" />
             </div>
             <div className="md:col-start-2 flex justify-end items-end md:pt-0 pt-10">
               <Button variant="secondary">Share Meal</Button>
