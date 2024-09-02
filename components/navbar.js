@@ -15,7 +15,6 @@ export default function Navbar() {
   };
 
   const path = usePathname();
-  console.log(path);
 
   return (
     <nav className="bg-black shadow border-b-2 border-neutral-700 w-full fixed top-0 left-0 z-50">
