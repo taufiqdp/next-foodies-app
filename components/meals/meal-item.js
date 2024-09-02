@@ -7,13 +7,13 @@ export default function MealItem({ title, slug, image, summary, creator }) {
     <article>
       <div className="rounded overflow-hidden shadow-lg flex flex-col">
         <div className="relative">
-          <div>
+          <div className="w-full h-[350px]">
             <Image
               src={image}
               alt="Sunset in the mountains"
-              width={2000}
-              height={2000}
-              className="w-full max-h-[350px]"
+              layout="fill"
+              objectFit="cover"
+              className="w-full h-full"
             />
             <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
           </div>
