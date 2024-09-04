@@ -1,4 +1,5 @@
 import ImagePicker from "@/components/meals/image-picker";
+import MealsFormLoading from "@/components/meals/meals-form-loading";
 import { Button } from "@/components/ui/button";
 import { shareMeal } from "@/lib/actions";
 
@@ -90,7 +91,7 @@ export default function ShareMealPage() {
               <ImagePicker label="image" name="image" />
             </div>
             <div className="md:col-start-2 flex justify-end items-end md:pt-0 pt-10">
-              <Button variant="secondary">Share Meal</Button>
+              <MealsFormLoading />
             </div>
           </div>
         </form>
