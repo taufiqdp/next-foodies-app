@@ -3,8 +3,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { getMeals } from "@/lib/meals";
 import MealsGrid from "@/components/meals/meals-grid";
 
-export default async function MealsPage() {
-  const meals = await getMeals();
+export default function MealsPage() {
+  const meals = getMeals();
 
   return (
     <main>
