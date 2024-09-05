@@ -1,8 +1,13 @@
+"use client";
+
 import ImagePicker from "@/components/meals/image-picker";
 import MealsFormLoading from "@/components/meals/meals-form-loading";
+import { useFormState } from "react-dom";
 import { shareMeal } from "@/lib/actions";
 
 export default function ShareMealPage() {
+  const [state, formAction] = useFormState(shareMeal, { message: null });
+
   return (
     <main className="md:max-w-4xl md:p-6 pt-6 mx-auto text-rose-50">
       <section className="p-10 bg-neutral-900 rounded-lg shadow-lg">
@@ -10,7 +15,7 @@ export default function ShareMealPage() {
           Share your <span className="text-rose-500">favorite recipe</span>
         </h1>
 
-        <form action={shareMeal}>
+        <form action={formAction}>
           <div className="mt-4 flex flex-col space-y-5">
             <div className="md:grid md:grid-cols-2 gap-10 space-y-5 md:space-y-0">
               <div className="col-start-1">
@@ -86,6 +91,7 @@ export default function ShareMealPage() {
           </div>
 
           <div className="md:grid md:grid-cols-2 pt-10">
+            {state.message && <p>{state.message}</p>}
             <div className="md:col-start-1 flex justify-center">
               <ImagePicker label="image" name="image" />
             </div>
