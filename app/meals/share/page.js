@@ -1,6 +1,5 @@
 import ImagePicker from "@/components/meals/image-picker";
 import MealsFormLoading from "@/components/meals/meals-form-loading";
-import { Button } from "@/components/ui/button";
 import { shareMeal } from "@/lib/actions";
 
 export default function ShareMealPage() {
